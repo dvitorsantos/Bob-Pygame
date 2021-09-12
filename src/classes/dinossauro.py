@@ -1,12 +1,12 @@
 import pygame
 
 from config.assets import agachar, correr, pular
+from config.settings import velocidadePulo, velocidadeAnimacao
 
 class Dinossauro:
     posicaoX = 80
     posicaoY = 310
     posicaoY_agachado = 340
-    velocidadePuloPadrao = 8.5
 
     def __init__(self):
         self.agacharImg = agachar
@@ -19,7 +19,7 @@ class Dinossauro:
         self.isPulando = False
 
         self.indexAnimacao = 0
-        self.velocidadePulo = self.velocidadePuloPadrao
+        self.velocidadePulo = velocidadePulo
         self.imagem = self.correrImg[0]
         self.rect = self.imagem.get_rect()
         self.rect.x = self.posicaoX
@@ -30,23 +30,23 @@ class Dinossauro:
         if self.isPulando:
             self.rect.y -= self.velocidadePulo * 4
             self.velocidadePulo -= 0.8
-        if self.velocidadePulo < - self.velocidadePuloPadrao:
+        if self.velocidadePulo < - velocidadePulo:
             self.isPulando = False
-            self.velocidadePulo = self.velocidadePuloPadrao
+            self.velocidadePulo = velocidadePulo
 
     def correr(self):
-        self.imagem = self.correrImg[self.indexAnimacao // 5]
+        self.imagem = self.correrImg[int(self.indexAnimacao)]
         self.rect = self.imagem.get_rect()
         self.rect.x = self.posicaoX
         self.rect.y = self.posicaoY
-        self.indexAnimacao += 1
+        self.indexAnimacao += velocidadeAnimacao
 
     def agachar(self):
-        self.imagem = self.agacharImg[self.indexAnimacao // 5]
+        self.imagem = self.agacharImg[int(self.indexAnimacao)]
         self.rect = self.imagem.get_rect()
         self.rect.x = self.posicaoX
         self.rect.y = self.posicaoY_agachado
-        self.indexAnimacao += 1
+        self.indexAnimacao += velocidadeAnimacao
 
     def update(self, tecla):
         if self.isAgachado:
@@ -56,7 +56,7 @@ class Dinossauro:
         if self.isPulando:
             self.pular()
 
-        if self.indexAnimacao >= 10:
+        if self.indexAnimacao >= 2:
             self.indexAnimacao = 0
 
         if tecla[pygame.K_UP] and not self.isPulando:
