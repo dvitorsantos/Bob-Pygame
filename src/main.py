@@ -16,6 +16,7 @@ from classes.passaro import Passaro
 from config.assets import passaro, cactusGrande, cactusPequeno, planoDeFundo
 
 tela = pygame.display.set_mode((larguraTela, alturaTela))
+pygame.display.set_caption('Dino Pygame')
 
 def main():
     global velocidadeJogo, fundoPosicaoX, fundoPosicaoY, pontos, obstaculos
