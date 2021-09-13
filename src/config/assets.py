@@ -23,14 +23,14 @@ obstaculosImg = [pygame.image.load(os.path.join("../assets/obstaculos", "0.png")
         pygame.image.load(os.path.join("../assets/obstaculos", "4.png")),
         pygame.image.load(os.path.join("../assets/obstaculos", "bubble.png"))]
 
-minhoca = [pygame.image.load(os.path.join("../assets/minhoca", "0.png")),
-        pygame.image.load(os.path.join("../assets/minhoca", "1.png")),
-        pygame.image.load(os.path.join("../assets/minhoca", "2.png")),
-        pygame.image.load(os.path.join("../assets/minhoca", "3.png")),
-        pygame.image.load(os.path.join("../assets/minhoca", "4.png")),
-        pygame.image.load(os.path.join("../assets/minhoca", "5.png")),
-        pygame.image.load(os.path.join("../assets/minhoca", "6.png")),
-        pygame.image.load(os.path.join("../assets/minhoca", "7.png"))]
+robo = [pygame.image.load(os.path.join("../assets/robo", "0.png")),
+        pygame.image.load(os.path.join("../assets/robo", "1.png")),
+        pygame.image.load(os.path.join("../assets/robo", "2.png")),
+        pygame.image.load(os.path.join("../assets/robo", "3.png")),
+        pygame.image.load(os.path.join("../assets/robo", "4.png")),
+        pygame.image.load(os.path.join("../assets/robo", "5.png")),
+        pygame.image.load(os.path.join("../assets/robo", "6.png")),
+        pygame.image.load(os.path.join("../assets/robo", "7.png"))]
 
 planoDeFundo = pygame.image.load(os.path.join("../assets/others", "background.jpg"))
 planoDeFundoMenu = pygame.image.load(os.path.join("../assets/others", "BackgroundMenu.jpg"))

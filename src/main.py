@@ -9,10 +9,10 @@ from config.settings import larguraTela, alturaTela, velocidadeJogo
 from classes.bolha import Bolha
 from classes.bobEsponja import BobEsponja
 from classes.predio import Predio
-from classes.minhoca import Minhoca
+from classes.robo import Robo
 
 #Importando os assets dos objetos do cenário
-from config.assets import minhoca, planoDeFundo, planoDeFundoMenu, obstaculosImg
+from config.assets import robo, planoDeFundo, planoDeFundoMenu, obstaculosImg
 
 tela = pygame.display.set_mode((larguraTela, alturaTela))
 pygame.display.set_caption('Bob Esponja')
@@ -68,7 +68,7 @@ def main():
             if random.randint(0, 2) == 0:
                 obstaculos.append(Predio(obstaculosImg))
             elif random.randint(0, 2) == 2:
-                obstaculos.append(Minhoca(minhoca))
+                obstaculos.append(Robo(robo))
 
         #Lógica para incluir os obstaculos na tela e detectar colisão
         for obstaculo in obstaculos:
