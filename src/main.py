@@ -6,25 +6,24 @@ pygame.init()
 from config.settings import larguraTela, alturaTela, velocidadeJogo
 
 #Importando as classes dos objetos do cenário
-from classes.nuvem import Nuvem
-from classes.dinossauro import Dinossauro, correr
-from classes.cactusPequeno import CactusPequeno
-from classes.cactusGrande import CactusGrande
-from classes.passaro import Passaro
+from classes.bolha import Bolha
+from classes.bobEsponja import BobEsponja
+from classes.predio import Predio
+from classes.minhoca import Minhoca
 
 #Importando os assets dos objetos do cenário
-from config.assets import passaro, cactusGrande, cactusPequeno, planoDeFundo
+from config.assets import minhoca, planoDeFundo, planoDeFundoMenu, obstaculosImg
 
 tela = pygame.display.set_mode((larguraTela, alturaTela))
-pygame.display.set_caption('Dino Pygame')
+pygame.display.set_caption('Bob Esponja')
 
 def main():
     global velocidadeJogo, fundoPosicaoX, fundoPosicaoY, pontos, obstaculos
     rodando = True
     clock = pygame.time.Clock()
 
-    nuvem = Nuvem()
-    dinossauro = Dinossauro()
+    bolha = Bolha()
+    dinossauro = BobEsponja()
     
     #Definindo as variaveis globais do jogo
     velocidadeJogo = velocidadeJogo
@@ -50,16 +49,8 @@ def main():
 
     def fundo():
         global fundoPosicaoX, fundoPosicaoY
-        larguraImagem = planoDeFundo.get_width()
-
-        tela.blit(planoDeFundo, (fundoPosicaoX, fundoPosicaoY))
-        tela.blit(planoDeFundo, (larguraImagem + fundoPosicaoX, fundoPosicaoY))
-
-        if fundoPosicaoX <= -larguraImagem:
-            tela.blit(planoDeFundo, (larguraImagem + fundoPosicaoX, fundoPosicaoY))
-            fundoPosicaoX = 0
-
-        fundoPosicaoX -= velocidadeJogo
+        fundo = pygame.transform.scale(planoDeFundo,(larguraTela ,alturaTela))
+        tela.blit(fundo,(0,0))
 
     while rodando:
         for event in pygame.event.get():
@@ -67,6 +58,7 @@ def main():
                 rodando = False
 
         tela.fill((255, 255, 255))
+        fundo()
         tecla = pygame.key.get_pressed()
 
         dinossauro.draw(tela)
@@ -74,11 +66,9 @@ def main():
 
         if len(obstaculos) == 0:
             if random.randint(0, 2) == 0:
-                obstaculos.append(CactusPequeno(cactusPequeno))
-            elif random.randint(0, 2) == 1:
-                obstaculos.append(CactusGrande(cactusGrande))
+                obstaculos.append(Predio(obstaculosImg))
             elif random.randint(0, 2) == 2:
-                obstaculos.append(Passaro(passaro))
+                obstaculos.append(Minhoca(minhoca))
 
         #Lógica para incluir os obstaculos na tela e detectar colisão
         for obstaculo in obstaculos:
@@ -92,9 +82,8 @@ def main():
                 menu(contadorMortes)
 
         #Carregando cenário e interface de usuário
-        fundo()
-        nuvem.draw(tela)
-        nuvem.update()
+        bolha.draw(tela)
+        bolha.update()
         pontuacao()
 
         clock.tick(30)
@@ -102,16 +91,18 @@ def main():
 
 def menu(contadorMortes):
     global pontos
+    fundo = pygame.transform.scale(planoDeFundoMenu,(larguraTela ,alturaTela))
+    
     jogoRodando = True
     while jogoRodando:
         tela.fill((255, 255, 255))
         fonte = pygame.font.Font('freesansbold.ttf', 30)
-
+        tela.blit(fundo,(0,0))
         if contadorMortes == 0:
-            textoInformativo = fonte.render("Pressione uma tecla para jogar!", True, (0, 0, 0))
+            textoInformativo = fonte.render("Pressione uma tecla para jogar!", True, (255, 255, 255))
         elif contadorMortes > 0:
-            textoInformativo = fonte.render("Pressione uma tecla para jogar novamente D:", True, (0, 0, 0))
-            pontuacao = fonte.render("Sua pontuação: " + str(pontos), True, (0, 0, 0))
+            textoInformativo = fonte.render("Pressione uma tecla para jogar novamente D:", True, (255, 255, 255))
+            pontuacao = fonte.render("Sua pontuação: " + str(pontos), True, (255, 255, 255))
             pontuacaoRect = pontuacao.get_rect()
             pontuacaoRect.center = (larguraTela // 2, alturaTela // 2 + 50)
             tela.blit(pontuacao, pontuacaoRect)
@@ -120,7 +111,6 @@ def menu(contadorMortes):
         textoInformativoRect.center = (larguraTela // 2, alturaTela // 2)
 
         tela.blit(textoInformativo, textoInformativoRect)
-        tela.blit(correr[0], (larguraTela // 2 - 20, alturaTela // 2 - 140))
 
         pygame.display.update()
 

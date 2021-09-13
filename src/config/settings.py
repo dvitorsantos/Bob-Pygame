@@ -1,7 +1,7 @@
 #Configurações gerais
 alturaTela = 600
 larguraTela = 1100
-velocidadeJogo = 20
+velocidadeJogo = 40
 
 #Configurações de movimento
 velocidadePulo = 8.5

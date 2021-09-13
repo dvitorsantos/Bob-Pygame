@@ -1,13 +1,13 @@
 import random
 
 from config.settings import larguraTela, velocidadeJogo
-from config.assets import nuvem
+from config.assets import bolha
 
-class Nuvem:
+class Bolha:
     def __init__(self):
         self.x = larguraTela + random.randint(800, 1000)
         self.y = random.randint(50, 100)
-        self.imagem = nuvem
+        self.imagem = bolha
         self.largura = self.imagem.get_width()
 
     def update(self):

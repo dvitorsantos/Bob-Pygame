@@ -1,9 +1,9 @@
 import pygame
 
-from config.assets import agachar, correr, pular
+from config.assets import correr, pular, agachar
 from config.settings import velocidadePulo, velocidadeAnimacao
 
-class Dinossauro:
+class BobEsponja:
     posicaoX = 80
     posicaoY = 310
     posicaoY_agachado = 340

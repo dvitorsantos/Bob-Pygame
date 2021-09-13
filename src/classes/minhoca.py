@@ -1,7 +1,7 @@
 from classes.obstaculo import Obstaculo
 from config.settings import velocidadeAnimacao
 
-class Passaro(Obstaculo):
+class Minhoca(Obstaculo):
     def __init__(self, imagem):
         self.tipoObstaculo = 0
         super().__init__(imagem, self.tipoObstaculo)

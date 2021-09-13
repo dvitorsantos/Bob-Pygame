@@ -1,23 +1,39 @@
 import os
 import pygame
 
-cactusPequeno = [pygame.image.load(os.path.join("../assets/cactos", "SmallCactus1.png")),
-                pygame.image.load(os.path.join("../assets/cactos", "SmallCactus2.png")),
-                pygame.image.load(os.path.join("../assets/cactos", "SmallCactus3.png"))]
+correr = [pygame.image.load(os.path.join("../assets/bobesponja/run", "0.png")),
+        pygame.image.load(os.path.join("../assets/bobesponja/run", "1.png")),
+        pygame.image.load(os.path.join("../assets/bobesponja/run", "2.png")),
+        pygame.image.load(os.path.join("../assets/bobesponja/run", "3.png")),
+        pygame.image.load(os.path.join("../assets/bobesponja/run", "4.png")),
+        pygame.image.load(os.path.join("../assets/bobesponja/run", "5.png")),
+        pygame.image.load(os.path.join("../assets/bobesponja/run", "6.png")),
+        pygame.image.load(os.path.join("../assets/bobesponja/run", "7.png")),
+        pygame.image.load(os.path.join("../assets/bobesponja/run", "8.png"))]
 
-cactusGrande = [pygame.image.load(os.path.join("../assets/cactos", "LargeCactus1.png")),
-                pygame.image.load(os.path.join("../assets/cactos", "LargeCactus2.png")),
-                pygame.image.load(os.path.join("../assets/cactos", "LargeCactus3.png"))]
+pular = pygame.image.load(os.path.join("../assets/bobesponja/jump", "1.png"))
 
-passaro = [pygame.image.load(os.path.join("../assets/passaro", "Bird1.png")),
-        pygame.image.load(os.path.join("../assets/passaro", "Bird2.png"))]
+agachar = [pygame.image.load(os.path.join("../assets/bobesponja/crouch", "0.png")),
+        pygame.image.load(os.path.join("../assets/bobesponja/crouch", "1.png")),]
 
-#Assets do dinossauro
-correr = [pygame.image.load(os.path.join("../Assets/dinossauro", "DinoRun1.png")),
-           pygame.image.load(os.path.join("../Assets/dinossauro", "DinoRun2.png"))]
-pular = pygame.image.load(os.path.join("../Assets/dinossauro", "DinoJump.png"))
-agachar = [pygame.image.load(os.path.join("../Assets/dinossauro", "DinoDuck1.png")),
-           pygame.image.load(os.path.join("../Assets/dinossauro", "DinoDuck2.png"))]
+obstaculosImg = [pygame.image.load(os.path.join("../assets/obstaculos", "0.png")),
+        pygame.image.load(os.path.join("../assets/obstaculos", "1.png")),
+        pygame.image.load(os.path.join("../assets/obstaculos", "2.png")),
+        pygame.image.load(os.path.join("../assets/obstaculos", "3.png")),
+        pygame.image.load(os.path.join("../assets/obstaculos", "4.png")),
+        pygame.image.load(os.path.join("../assets/obstaculos", "bubble.png"))]
 
-planoDeFundo = pygame.image.load(os.path.join("../assets/others", "Track.png"))
-nuvem = pygame.image.load(os.path.join("../Assets/others", "Cloud.png"))
+minhoca = [pygame.image.load(os.path.join("../assets/minhoca", "0.png")),
+        pygame.image.load(os.path.join("../assets/minhoca", "1.png")),
+        pygame.image.load(os.path.join("../assets/minhoca", "2.png")),
+        pygame.image.load(os.path.join("../assets/minhoca", "3.png")),
+        pygame.image.load(os.path.join("../assets/minhoca", "4.png")),
+        pygame.image.load(os.path.join("../assets/minhoca", "5.png")),
+        pygame.image.load(os.path.join("../assets/minhoca", "6.png")),
+        pygame.image.load(os.path.join("../assets/minhoca", "7.png")),
+        pygame.image.load(os.path.join("../assets/minhoca", "8.png")),
+        pygame.image.load(os.path.join("../assets/minhoca", "9.png"))]
+
+planoDeFundo = pygame.image.load(os.path.join("../assets/others", "background.jpg"))
+planoDeFundoMenu = pygame.image.load(os.path.join("../assets/others", "BackgroundMenu.jpg"))
+bolha = pygame.image.load(os.path.join("../Assets/others", "bolha.png"))
