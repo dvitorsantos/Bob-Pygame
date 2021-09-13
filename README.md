@@ -1,4 +1,4 @@
-# Dino-Pygame
+# Bob-Pygame
 Jogo do Bob Esponja que pula cactos prédios e desvia de minhocas
 
 ## Instalação
