@@ -1,5 +1,5 @@
 # Dino-Pygame
-Jogo do dinossauro 🦖 que pula cactos 🌵 e desvia de passaros 🦅
+Jogo do Bob Esponja que pula cactos prédios e desvia de minhocas
 
 <img align="center" src="github/start.png" />
 <img align="center" src="github/playing.png" />
