@@ -30,9 +30,7 @@ minhoca = [pygame.image.load(os.path.join("../assets/minhoca", "0.png")),
         pygame.image.load(os.path.join("../assets/minhoca", "4.png")),
         pygame.image.load(os.path.join("../assets/minhoca", "5.png")),
         pygame.image.load(os.path.join("../assets/minhoca", "6.png")),
-        pygame.image.load(os.path.join("../assets/minhoca", "7.png")),
-        pygame.image.load(os.path.join("../assets/minhoca", "8.png")),
-        pygame.image.load(os.path.join("../assets/minhoca", "9.png"))]
+        pygame.image.load(os.path.join("../assets/minhoca", "7.png"))]
 
 planoDeFundo = pygame.image.load(os.path.join("../assets/others", "background.jpg"))
 planoDeFundoMenu = pygame.image.load(os.path.join("../assets/others", "BackgroundMenu.jpg"))
